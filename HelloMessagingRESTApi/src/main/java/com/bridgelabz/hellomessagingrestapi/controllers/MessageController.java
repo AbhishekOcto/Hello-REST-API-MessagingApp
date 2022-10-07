@@ -34,6 +34,10 @@ public class MessageController {
     }
     Hello Mark Taylor from Bridgelabz*/
 
-    
+    @PutMapping("/hello/put/{firstName}")
+    public String sayHelloWithPut(@PathVariable String firstName, @RequestParam String lastName){
+        return "Hello " + firstName + " " + lastName + " from Bridgelabz";
+    }
+    //http://localhost:8083/hello/put/Mark?lastName=Taylor
 
 }

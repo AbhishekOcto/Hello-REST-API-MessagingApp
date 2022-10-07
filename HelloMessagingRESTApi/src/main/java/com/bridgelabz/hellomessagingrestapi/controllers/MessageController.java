@@ -1,10 +1,8 @@
 package com.bridgelabz.hellomessagingrestapi.controllers;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.bridgelabz.hellomessagingrestapi.entity.User;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MessageController {
@@ -25,5 +23,17 @@ public class MessageController {
         return "Hello " +name+ " from Bridgelabz";
     }
    // localhost:8083/hello/{Mark}
+
+    @PostMapping("/hello")
+    public String getFirstLastName(@RequestBody User user){
+        return "Hello "+ user.getFirstName() +" "+ user.getLastName() +" from Bridgelabz";
+    }
+    /*{
+    "firstName": "Mark",
+    "lastName": "Taylor"
+    }
+    Hello Mark Taylor from Bridgelabz*/
+
+    
 
 }
